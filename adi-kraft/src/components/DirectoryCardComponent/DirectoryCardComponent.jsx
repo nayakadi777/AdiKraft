@@ -12,13 +12,13 @@ const DirectoryCard = ({item}) =>{
     return(
         <div >
         <Card className="card" >
-        <CardImg top className="CardImg" width="100%" src={imageUrl} alt={title} />
+        <CardImg top className="CardImg" width="100%" src={imageUrl} alt={title ? title : item.name} />
         <CardImgOverlay className="overlay">
         <CardBody>
-          <CardTitle className="cardTitle">{title.toUpperCase()}</CardTitle>
+          <CardTitle className="cardTitle">{title?title.toUpperCase() : item.name}</CardTitle>
         </CardBody>
         </CardImgOverlay>
-        <Button  color="secondary" size="lg" className="button">Shop Now</Button>
+        <Button  color="secondary" size="lg" className="button">{ title ? 'Shop Now' : 'Add To Cart'}</Button>
       </Card>
     </div>
     )
